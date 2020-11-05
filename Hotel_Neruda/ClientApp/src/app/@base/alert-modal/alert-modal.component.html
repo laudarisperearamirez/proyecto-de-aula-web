@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="modal-header">
+        <div class="card-header card-header-primary" id="pruebaxd">
+          <h2 class="card-title modal-title heading text-center">{{title}}</h2>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <span [innerHTML]="message"></span>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cerrar</button>
+</div>

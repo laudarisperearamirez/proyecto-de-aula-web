@@ -1,0 +1,253 @@
+<h1>Consultar disponibilidad!</h1>
+<hr>
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+      <div class="col">Fecha de inicio</div>
+      <div class="col">Fecha de fin</div>
+      <!--Boton para consular la disponibilidad de habitaciones-->
+      <div class="col">
+        <button type="button" class="btn btn-outline-secondary mb-2"
+        (click)="fechaCorrecta()"
+        ngbTooltip="Click para consultar habitaciones disponibles entre estas fechas.">
+        Disponibilidad
+    </button>
+      </div>
+      <div class="col">
+        <input [(ngModel)]="searchText" type="text" class="formcontrol" placeholder="Buscar :3">
+      </div>
+    </div>
+  </div>
+
+
+<form class="form-inline">
+    <div class="form-group hidden">
+      <div class="input-group">
+        <input name="datepicker"
+               class="form-control"
+               ngbDatepicker
+               #datepicker="ngbDatepicker"
+               [autoClose]="'outside'"
+               (dateSelect)="onDateSelection($event)"
+               [displayMonths]="2"
+               [dayTemplate]="t"
+               outsideDays="hidden"
+               [startDate]="fromDate!">
+        <ng-template #t let-date let-focused="focused">
+          <span class="custom-day"
+                [class.focused]="focused"
+                [class.range]="isRange(date)"
+                [class.faded]="isHovered(date) || isInside(date)"
+                (mouseenter)="hoveredDate = date"
+                (mouseleave)="hoveredDate = null">
+            {{ date.day }}
+          </span>
+        </ng-template>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <input #dpFromDate
+               class="form-control" placeholder="yyyy-mm-dd"
+               name="dpFromDate"
+               [value]="formatter.format(fromDate)"
+               (input)="fromDate = validateInput(fromDate, dpFromDate.value)">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group ml-2">
+      <div class="input-group">
+        <input #dpToDate
+               class="form-control" placeholder="yyyy-mm-dd"
+               name="dpToDate"
+               [value]="formatter.format(toDate)"
+               (input)="toDate = validateInput(toDate, dpToDate.value)">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  
+
+<hr />
+
+<div>
+
+    <table class="table table-striped" *ngIf='habitacionesDisponibles && habitacionesDisponibles.length'>
+        <thead>
+            <tr>
+                
+                <th scope="col">codigo</th>
+                <th scope="col">Num habitacion</th>
+                <th scope="col">Tipo </th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Numero Piso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let habitacion of habitacionesDisponibles|filtroHabitacion:searchText; index as i ">
+                
+                <td>{{habitacion.codigo }}</td>
+                <td>{{habitacion.numero_Habitacio }}</td>
+                <td>{{ habitacion.tipo }}</td>
+                <td>{{ habitacion.precio}}</td>
+                <td>{{ habitacion.caracteristica }}</td>
+                <td>{{ habitacion.numero_de_Piso}}</td>
+                <td><button class="btn btn-primary mr-1"
+                    (click)="pintarInput(habitacion.codigo)" 
+                    
+                    (click)="openScrollableContent(longContent)"
+                    >Reservar</button></td>
+            </tr>
+        </tbody>
+    </table>
+<!-------------------------------------------- modal ver--------------------------------------------->
+    <ng-template #longContent let-modal>
+        <div class="card text-center">
+            <div class="modal-header " style="text-align:center;">
+                <div class="card-header" style=" margin:0px auto; border-radius: 10%;" id="pruebaxd">
+                    <h2 class="card-title modal-title heading text-center">Reserva</h2>
+                    <p class="card-category">Datos del reserva</p>                                                
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="block-3">
+                <div class="container-1">                                                        
+                    <form [formGroup]="formGroup">
+    
+                        <div class="form-group">
+                            <label><h3 class="card-title modal-title heading text-center">Fecha de Inicio: </h3></label><br>
+                            <label> {{prueba1}}</label>
+                        </div>
+    
+                        <div class="form-group">
+                            <label><h3 class="card-title modal-title heading text-center">Fecha final: </h3></label><br>
+                            <label> {{prueba2}}</label>
+                        </div>
+    
+                    <div class="form-group">
+                        <label><h3 class="card-title modal-title heading text-center">Habitacion: </h3></label><br>
+                        <label> {{_idHabitacion}} </label>
+                    </div>
+    
+                    <div class="form-group">
+                        <label><h3 class="card-title modal-title heading text-center">Identificación del Cliente</h3></label>
+                        <div class="input-group">
+                            <input type="text" formControlName="idCliente" class="form-control" #idc
+                                [ngClass]="{ 'is-invalid':  control.idCliente.errors }" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-primary" (click)="tomarValor(idc.value)">Buscar</button>
+                            </div>
+                        </div>
+                        <div *ngIf=" control.idCliente.errors" class="invalid-feedback">
+                            <div *ngIf="control.idCliente.errors.required">La Identificación del cliente es requerida</div>
+                        </div>
+                    </div><br>
+                    </form>
+                </div>
+                <div class="clie" *ngIf="clienteR">
+                    <hr>
+                    <app-cliente-registro></app-cliente-registro>
+                </div><br>
+            </div>
+        </div>
+        <div class="modal-footer text-center">
+            <div class="text-center">
+                <button class="btn btn-primary" (click)=" openSm(content)" 
+                    [disabled]="formGroup.invalid">Registrar Reserva</button>
+    
+                    <!-----------------------este modal es quien confirma la edicion------------------------>
+                    <ng-template #content let-modal>
+                        <div class="card">
+                        <div class="modal-header">
+                            <div class="card-header card-header-primary" id="pruebaxd">
+                                <h2 class="card-title modal-title heading text-center">Registrar reserva?</h2>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal-body">
+                            <p>seguro que desea Resgistrar esta reserva?&hellip;</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button (click)=" onSubmit()" (click)="modal.close('Close click')">Reservar</button>
+                        </div>
+                    </ng-template>
+                    <!-----------------------este modal es quien confirma la edicion------------------------>    
+            </div>
+        </div>                                    
+    </ng-template>
+    <!--------------------------------------------Fin modal ver--------------------------------------------->
+    
+    <div>
+        <div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Reservas</h4>
+                        <p class="card-category">Reservas registradas en el hotel neruda</p>
+                    </div>
+                    <div  class="card-body">
+                        <div class="table-responsive">
+                            <table class="table " *ngIf='reservas && reservas.length'>
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" scope="col">Codigo</th>
+                                        <th class="text-center" scope="col">Fecha de inicio </th>
+                                        <th class="text-center" scope="col">Fecha fin</th>
+                                        <th class="text-center" scope="col">Cliente</th>
+                                        <th class="text-center" scope="col">Habitacion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let reserva of reservas; index as i">
+                                        <td class="text-center" >{{ reserva.idReserva }} </td>
+                                        <td class="text-center" >{{ reserva.fechaInicio }}</td>
+                                        <td class="text-center" >{{ reserva.fechaFin }}</td>
+                                        <td class="text-center" >{{ reserva.idCliente }}</td>
+                                        <td class="text-center" >{{ reserva.idHabitacion }}</td>
+                                        <td><button class="btn btn-primary mr-1"
+                                            (click)=" openSm(content)"
+                                            >Eliminar</button></td>
+                                        <!------------------Modal eliminar ------------------------------------------>
+
+                                        <ng-template #content let-modal>
+                                            <div class="card">
+                                              <div class="modal-header">
+                                                  <div class="card-header card-header-primary" id="pruebaxd">
+                                                    <h4 class="card-title ">Eliminar reserva?</h4>
+                                                </div>
+                                                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                            </div>
+                                            <div class="modal-body">
+                                              <p>seguro que desea eliminar a {{reserva.idReserva}}&hellip;</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-outline-dark" 
+                                              (click)=" delete(reserva.idReserva)"
+                                              (click)="optimizacionClickEliminarPcsViejos(reserva.idReserva)"
+                                              
+                                                (click)="modal.close('Close click')">Eliminar</button>
+                                            </div>
+                                          </ng-template>
+                                        <!------------------------ fin Modal eliminar --------------------->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>
+
+
+

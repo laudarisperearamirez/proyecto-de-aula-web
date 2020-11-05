@@ -1,0 +1,189 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Logica\\Logica.csproj": {}
+  },
+  "projects": {
+    "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Datos\\Datos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Datos\\Datos.csproj",
+        "projectName": "Datos",
+        "projectPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Datos\\Datos.csproj",
+        "packagesPath": "C:\\Users\\LAUDARIS\\.nuget\\packages\\",
+        "outputPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Datos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LAUDARIS\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\Entidad.csproj": {
+                "projectPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\Entidad.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\Entidad.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\Entidad.csproj",
+        "projectName": "Entidad",
+        "projectPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\Entidad.csproj",
+        "packagesPath": "C:\\Users\\LAUDARIS\\.nuget\\packages\\",
+        "outputPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LAUDARIS\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Logica\\Logica.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Logica\\Logica.csproj",
+        "projectName": "Logica",
+        "projectPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Logica\\Logica.csproj",
+        "packagesPath": "C:\\Users\\LAUDARIS\\.nuget\\packages\\",
+        "outputPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Logica\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LAUDARIS\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Datos\\Datos.csproj": {
+                "projectPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Datos\\Datos.csproj"
+              },
+              "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\Entidad.csproj": {
+                "projectPath": "D:\\Pack Prog Web\\Proyecto de aula\\neruda2.0\\Entidad\\Entidad.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3">
+
+            <h2>Registro de Acompañantes Del Cliente</h2>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label>Identificacion</label>
+
+                    <input type="text" name="identificacion" [(ngModel)]= "acompanante.identificacion" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Primer Nombre</label>
+
+                    <input type="text" name="primerNombre" [(ngModel)]="acompanante.primerNombre" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Segundo Nombre</label>
+
+                    <input type="text" name="segundoNombre" [(ngModel)]="acompanante.segundoNombre" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Primer Apellido</label>
+
+                    <input type="text" name="primerApellido" [(ngModel)]="acompanante.primerApellido" class="form-control" />
+
+                </div>
+                
+                <div class="form-group">
+
+                    <label>Segundo Apellido</label>
+
+                    <input type="text" name="segundoApellido" [(ngModel)]="acompanante.segundoApellido" class="form-control" />
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Edad</label>
+
+                    <input type="number" name="edad" [(ngModel)]="acompanante.edad" class="form-control" />
+
+                </div>
+
+                
+                <div class="form-group">
+
+                    <label>Genero</label>
+
+                    <input type="text" name="genero" [(ngModel)]="acompanante.genero" class="form-control" />
+
+                </div>
+
+               
+
+                <div class="text-center">
+
+                    <button class="btn btn-primary mr-1" (click)="add()">Register</button>
+
+                    <button class="btn btn-secondary" type="reset">Cancel</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Registro de Clientes</h2>
+            <form>
+                <div class="form-group">
+                    <label>Identificacion</label>
+                    <input type="text" name="identificacion" [(ngModel)]="cliente.identificacion"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>primerNombre</label>
+                    <input type="text" name="primerNombre" [(ngModel)]="cliente.primerNombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>segundoNombre</label>
+                    <input type="text" name="segundoNombre" [(ngModel)]="cliente.segundoNombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>primerApellido</label>
+                    <input type="text" name="primerApellido" [(ngModel)]="cliente.primerApellido"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>segundoApellido</label>
+                    <input type="text" name="segundoApellido" [(ngModel)]="cliente.segundoApellido" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>edad</label>
+                    <input type="text" name="edad" [(ngModel)]="cliente.edad" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>genero</label>
+                    <input type="text" name="genero" [(ngModel)]="cliente.genero" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>telefono</label>
+                    <input type="text" name="telefono" [(ngModel)]="cliente.telefono" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>gmail</label>
+                    <input type="text" name="gmail" [(ngModel)]="cliente.gmail" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>direccion</label>
+                    <input type="text" name="direccion" [(ngModel)]="cliente.direccion" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>ciudad</label>
+                    <input type="text" name="ciudad" [(ngModel)]="cliente.ciudad" class="form-control" />
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1" (click)="add()">REGISTRAR</button>
+                    <button class="btn btn-secondary" type="reset">CANCELAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

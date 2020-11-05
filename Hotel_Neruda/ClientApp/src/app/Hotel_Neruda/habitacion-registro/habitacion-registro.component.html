@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Registro habitacion</h2>
+            <form>
+                <div class="form-group">
+                    <label>Codigo</label>
+                    <input type="text" name="codigo" [(ngModel)]="habitacion.codigo" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Tipo de habitacion</label>
+                    <input type="text" name="tipo" [(ngModel)]="habitacion.tipo" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Numero de habitacion</label>
+                    <input type="text" name="numero_Habitacio" [(ngModel)]="habitacion.numero_Habitacio"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Precio de habitacion</label>
+                    <input type="text" name="precio" [(ngModel)]="habitacion.precio" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Caracteristica</label>
+                    <input type="text" name="caracteristica" [(ngModel)]="habitacion.caracteristica"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Numero de piso</label>
+                    <input type="text" name="numero_de_piso" [(ngModel)]="habitacion.numero_de_piso"
+                        class="form-control" />
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1" (click)="add()">REGISTRAR</button>
+                    <button class="btn btn-secondary" type="reset">CANCELAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

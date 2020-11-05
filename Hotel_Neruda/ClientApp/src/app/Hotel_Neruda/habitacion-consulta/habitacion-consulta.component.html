@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-6">
+        <input [(ngModel)]="searchText" type="text" class="formcontrol" placeholder="Type to filter">
+    </div>
+</div>
+<hr>
+<table class="table table-striped" *ngIf='habitaciones && habitaciones.length'>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Tipo </th>
+            <th scope="col">Numero habitacion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Numero Piso</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let habitacion of habitaciones; index as i ">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ habitacion.codigo }} </td>
+            <td>{{ habitacion.tipo }}</td>
+            <td>{{habitacion.numero_Habitacio }}</td>
+            <td>{{ habitacion.precio}}</td>
+            <td>{{ habitacion.caracteristica }}</td>
+            <td>{{ habitacion.numero_de_piso}}</td>
+        </tr>
+    </tbody>
+</table>

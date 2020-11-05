@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Registro de Empleado</h2>
+            <form>
+                <div class="form-group">
+                    <label>Identificacion</label>
+                    <input type="text" name="identificacion" [(ngModel)]="empleado.identificacion"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>primerNombre</label>
+                    <input type="text" name="primerNombre" [(ngModel)]="empleado.primerNombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>segundoNombre</label>
+                    <input type="text" name="segundoNombre" [(ngModel)]="empleado.segundoNombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>primerApellido</label>
+                    <input type="text" name="primerApellido" [(ngModel)]="empleado.primerApellido"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>segundoApellido</label>
+                    <input type="text" name="segundoApellido" [(ngModel)]="empleado.segundoApellido" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>edad</label>
+                    <input type="number" name="edad" [(ngModel)]="empleado.edad" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>genero</label>
+                    <input type="text" name="genero" [(ngModel)]="empleado.genero" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>telefono</label>
+                    <input type="number" name="telefono" [(ngModel)]="empleado.telefono" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>gmail</label>
+                    <input type="text" name="gmail" [(ngModel)]="empleado.gmail" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>direccion</label>
+                    <input type="text" name="direccion" [(ngModel)]="empleado.direccion" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>ciudad</label>
+                    <input type="text" name="ciudad" [(ngModel)]="empleado.ciudad" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>nivel_estudio</label>
+                    <input type="text" name="nivel_estudio" [(ngModel)]="empleado.nivel_estudio" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>cargo</label>
+                    <input type="text" name="cargo" [(ngModel)]="empleado.cargo" class="form-control" />
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1" (click)="add()">REGISTRAR</button>
+                    <button class="btn btn-secondary" type="reset">CANCELAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
